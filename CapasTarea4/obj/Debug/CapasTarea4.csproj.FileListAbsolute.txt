@@ -1,0 +1,17 @@
+C:\Users\Usuario\Source\Repos\CapasTarea4\bin\Debug\CapasTarea4.dll
+C:\Users\Usuario\Source\Repos\CapasTarea4\bin\Debug\CapasTarea4.pdb
+C:\Users\Usuario\Source\Repos\CapasTarea4\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Usuario\Source\Repos\CapasTarea4\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Usuario\Source\Repos\CapasTarea4\obj\Debug\CapasTarea4.csprojAssemblyReference.cache
+C:\Users\Usuario\Source\Repos\CapasTarea4\obj\Debug\CapasTarea4.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Source\Repos\CapasTarea4\obj\Debug\CapasTarea4.csproj.CopyComplete
+C:\Users\Usuario\Source\Repos\CapasTarea4\obj\Debug\CapasTarea4.dll
+C:\Users\Usuario\Source\Repos\CapasTarea4\obj\Debug\CapasTarea4.pdb
+C:\Users\willi\Desktop\Tarea4_P5\CapasTarea4\bin\Debug\CapasTarea4.dll
+C:\Users\willi\Desktop\Tarea4_P5\CapasTarea4\bin\Debug\CapasTarea4.pdb
+C:\Users\willi\Desktop\Tarea4_P5\CapasTarea4\bin\Debug\Newtonsoft.Json.dll
+C:\Users\willi\Desktop\Tarea4_P5\CapasTarea4\bin\Debug\Newtonsoft.Json.xml
+C:\Users\willi\Desktop\Tarea4_P5\CapasTarea4\obj\Debug\CapasTarea4.csproj.CoreCompileInputs.cache
+C:\Users\willi\Desktop\Tarea4_P5\CapasTarea4\obj\Debug\CapasTarea4.csproj.CopyComplete
+C:\Users\willi\Desktop\Tarea4_P5\CapasTarea4\obj\Debug\CapasTarea4.dll
+C:\Users\willi\Desktop\Tarea4_P5\CapasTarea4\obj\Debug\CapasTarea4.pdb

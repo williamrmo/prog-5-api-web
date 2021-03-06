@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DB_Tarea3_PVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="productos">
+          <Key>
+            <PropertyRef Name="Codigo_producto" />
+          </Key>
+          <Property Name="Codigo_producto" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cantidad" Type="int" />
+          <Property Name="Bodega" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="ID_Usuario" />
+          </Key>
+          <Property Name="ID_Usuario" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apeliido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <Function Name="eliminar_producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Codigo_producto" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="modificar_producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Codigo_producto" Type="varchar" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Cantidad" Type="int" Mode="In" />
+          <Parameter Name="Bodega" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="mostrar_producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Codigo_producto" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="mostrar_todos_productos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="mostrar_todos_usuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="mostrar_usuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_Usuario" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="mostrar_usuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_Usuario" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="nuevo_producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Codigo_producto" Type="varchar" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Cantidad" Type="int" Mode="In" />
+          <Parameter Name="Bodega" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="nuevo_usuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_Usuario" Type="varchar" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Apeliido" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="DB_Tarea3_PVModelStoreContainer">
+          <EntitySet Name="productos" EntityType="Self.productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_Tarea3_PVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DB_Tarea3_PVEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="eliminar_producto">
+          <Parameter Name="Codigo_producto" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="login" ReturnType="Collection(DB_Tarea3_PVModel.login_Result)">
+            <Parameter Name="ID_Usuario" Mode="In" Type="String" />
+            <Parameter Name="pass" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="moBodega">
+            <Parameter Name="Codigo_producto" Mode="In" Type="String" />
+            <Parameter Name="Dato" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="moCantida">
+            <Parameter Name="Codigo_producto" Mode="In" Type="String" />
+            <Parameter Name="Dato" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="modificar_producto">
+            <Parameter Name="Codigo_producto" Mode="In" Type="String" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Cantidad" Mode="In" Type="Int32" />
+            <Parameter Name="Bodega" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="modiprod">
+            <Parameter Name="Codigo_producto" Mode="In" Type="String" />
+            <Parameter Name="Columna" Mode="In" Type="String" />
+            <Parameter Name="Dato" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="monombre">
+            <Parameter Name="Codigo_producto" Mode="In" Type="String" />
+            <Parameter Name="Dato" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="mostrar_producto" ReturnType="Collection(DB_Tarea3_PVModel.mostrar_producto_Result)">
+          <Parameter Name="Codigo_producto" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="mostrar_todos_productos" ReturnType="Collection(DB_Tarea3_PVModel.mostrar_todos_productos_Result)" />
+          <FunctionImport Name="mostrar_todos_usuarios" ReturnType="Collection(DB_Tarea3_PVModel.mostrar_todos_usuarios_Result)" />
+          <FunctionImport Name="mostrar_usuario" ReturnType="Collection(DB_Tarea3_PVModel.mostrar_usuario_Result)">
+            <Parameter Name="ID_Usuario" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="nuevo_producto">
+            <Parameter Name="Codigo_producto" Mode="In" Type="String" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Cantidad" Mode="In" Type="Int32" />
+            <Parameter Name="Bodega" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="nuevo_usuario">
+            <Parameter Name="ID_Usuario" Mode="In" Type="String" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Apeliido" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DB_Tarea3_PVModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DB_Tarea3_PVModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="productos" EntityType="DB_Tarea3_PVModel.producto" />
+          <EntitySet Name="usuarios" EntityType="DB_Tarea3_PVModel.usuario" />
+          <FunctionImport Name="mostrar_usuarios" ReturnType="Collection(DB_Tarea3_PVModel.mostrar_usuarios_Result)">
+            <Parameter Name="ID_Usuario" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="login_Result">
+          <Property Type="String" Name="ID_Usuario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Apeliido" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="mostrar_producto_Result">
+          <Property Type="String" Name="Codigo_producto" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Cantidad" Nullable="true" />
+          <Property Type="String" Name="Bodega" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="mostrar_todos_productos_Result">
+          <Property Type="String" Name="Codigo_producto" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Cantidad" Nullable="true" />
+          <Property Type="String" Name="Bodega" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="mostrar_todos_usuarios_Result">
+          <Property Type="String" Name="ID_Usuario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Apeliido" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="mostrar_usuario_Result">
+          <Property Type="String" Name="ID_Usuario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Apeliido" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="producto">
+          <Key>
+            <PropertyRef Name="Codigo_producto" />
+          </Key>
+          <Property Name="Codigo_producto" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cantidad" Type="Int32" />
+          <Property Name="Bodega" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="ID_Usuario" />
+          </Key>
+          <Property Name="ID_Usuario" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Apeliido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="mostrar_usuarios_Result">
+          <Property Type="String" Name="ID_Usuario" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Apeliido" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="30" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_Tarea3_PVModelStoreContainer" CdmEntityContainer="DB_Tarea3_PVEntities">
+          <FunctionImportMapping FunctionImportName="eliminar_producto" FunctionName="DB_Tarea3_PVModel.Store.eliminar_producto" />
+          <FunctionImportMapping FunctionImportName="modificar_producto" FunctionName="DB_Tarea3_PVModel.Store.modificar_producto" />
+          <FunctionImportMapping FunctionImportName="mostrar_producto" FunctionName="DB_Tarea3_PVModel.Store.mostrar_producto">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_Tarea3_PVModel.mostrar_producto_Result">
+                <ScalarProperty Name="Codigo_producto" ColumnName="Codigo_producto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Bodega" ColumnName="Bodega" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="mostrar_todos_productos" FunctionName="DB_Tarea3_PVModel.Store.mostrar_todos_productos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_Tarea3_PVModel.mostrar_todos_productos_Result">
+                <ScalarProperty Name="Codigo_producto" ColumnName="Codigo_producto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Bodega" ColumnName="Bodega" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="mostrar_todos_usuarios" FunctionName="DB_Tarea3_PVModel.Store.mostrar_todos_usuarios">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_Tarea3_PVModel.mostrar_todos_usuarios_Result">
+                <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apeliido" ColumnName="Apeliido" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="mostrar_usuario" FunctionName="DB_Tarea3_PVModel.Store.mostrar_usuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_Tarea3_PVModel.mostrar_usuario_Result">
+                <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apeliido" ColumnName="Apeliido" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="nuevo_producto" FunctionName="DB_Tarea3_PVModel.Store.nuevo_producto" />
+          <FunctionImportMapping FunctionImportName="nuevo_usuario" FunctionName="DB_Tarea3_PVModel.Store.nuevo_usuario" />
+          <EntitySetMapping Name="productos">
+            <EntityTypeMapping TypeName="DB_Tarea3_PVModel.producto">
+              <MappingFragment StoreEntitySet="productos">
+                <ScalarProperty Name="Bodega" ColumnName="Bodega" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Codigo_producto" ColumnName="Codigo_producto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuarios">
+            <EntityTypeMapping TypeName="DB_Tarea3_PVModel.usuario">
+              <MappingFragment StoreEntitySet="usuarios">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Apeliido" ColumnName="Apeliido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="mostrar_usuarios" FunctionName="DB_Tarea3_PVModel.Store.mostrar_usuarios">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_Tarea3_PVModel.mostrar_usuarios_Result">
+                <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apeliido" ColumnName="Apeliido" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

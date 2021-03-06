@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_Tarea3_PVModelStoreContainer" CdmEntityContainer="DB_Tarea3_PVEntities">
+    <FunctionImportMapping FunctionImportName="eliminar_producto" FunctionName="DB_Tarea3_PVModel.Store.eliminar_producto" />
+    <FunctionImportMapping FunctionImportName="modificar_producto" FunctionName="DB_Tarea3_PVModel.Store.modificar_producto" />
+    <FunctionImportMapping FunctionImportName="mostrar_producto" FunctionName="DB_Tarea3_PVModel.Store.mostrar_producto">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_Tarea3_PVModel.mostrar_producto_Result">
+          <ScalarProperty Name="Codigo_producto" ColumnName="Codigo_producto" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Bodega" ColumnName="Bodega" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="mostrar_todos_productos" FunctionName="DB_Tarea3_PVModel.Store.mostrar_todos_productos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_Tarea3_PVModel.mostrar_todos_productos_Result">
+          <ScalarProperty Name="Codigo_producto" ColumnName="Codigo_producto" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Bodega" ColumnName="Bodega" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="mostrar_todos_usuarios" FunctionName="DB_Tarea3_PVModel.Store.mostrar_todos_usuarios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_Tarea3_PVModel.mostrar_todos_usuarios_Result">
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apeliido" ColumnName="Apeliido" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="mostrar_usuario" FunctionName="DB_Tarea3_PVModel.Store.mostrar_usuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_Tarea3_PVModel.mostrar_usuario_Result">
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apeliido" ColumnName="Apeliido" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="nuevo_producto" FunctionName="DB_Tarea3_PVModel.Store.nuevo_producto" />
+    <FunctionImportMapping FunctionImportName="nuevo_usuario" FunctionName="DB_Tarea3_PVModel.Store.nuevo_usuario" />
+    <EntitySetMapping Name="productos">
+      <EntityTypeMapping TypeName="DB_Tarea3_PVModel.producto">
+        <MappingFragment StoreEntitySet="productos">
+          <ScalarProperty Name="Bodega" ColumnName="Bodega" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Codigo_producto" ColumnName="Codigo_producto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="DB_Tarea3_PVModel.usuario">
+        <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Apeliido" ColumnName="Apeliido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="mostrar_usuarios" FunctionName="DB_Tarea3_PVModel.Store.mostrar_usuarios">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_Tarea3_PVModel.mostrar_usuarios_Result">
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apeliido" ColumnName="Apeliido" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

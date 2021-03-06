@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "t4", "t4.csproj", "{36812E89-1401-4658-9B54-783D45C4269D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapasTarea4", "..\CapasTarea4\CapasTarea4.csproj", "{CB112915-F1BF-45B9-A85F-7FA32ABCF0B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTarea4", "..\ApiTarea4\ApiTarea4.csproj", "{2E601438-F806-4C54-B9AF-CB68F7A20C0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36812E89-1401-4658-9B54-783D45C4269D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36812E89-1401-4658-9B54-783D45C4269D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36812E89-1401-4658-9B54-783D45C4269D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36812E89-1401-4658-9B54-783D45C4269D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB112915-F1BF-45B9-A85F-7FA32ABCF0B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB112915-F1BF-45B9-A85F-7FA32ABCF0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB112915-F1BF-45B9-A85F-7FA32ABCF0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB112915-F1BF-45B9-A85F-7FA32ABCF0B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E601438-F806-4C54-B9AF-CB68F7A20C0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E601438-F806-4C54-B9AF-CB68F7A20C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E601438-F806-4C54-B9AF-CB68F7A20C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E601438-F806-4C54-B9AF-CB68F7A20C0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {868AB746-9DB9-47AD-9918-0F59B44ADE9F}
+	EndGlobalSection
+EndGlobal
